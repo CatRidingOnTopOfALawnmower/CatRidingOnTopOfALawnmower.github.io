@@ -34,11 +34,14 @@ var brickOffsetLeft = 30;
 var score = 0;
 
 var bricks = [];
-for(c=0; c<brickColumnCount; c++) {
-    bricks[c] = [];
-    for(r=0; r<brickRowCount; r++) {
-        bricks[c][r] = { x: 0, y: 0, status: 1 };
-    }
+createBricks();
+function createBricks(){
+  for(c=0; c<brickColumnCount; c++) {
+      bricks[c] = [];
+      for(r=0; r<brickRowCount; r++) {
+          bricks[c][r] = { x: 0, y: 0, status: 1 };
+      }
+  }
 }
 
 var brickX = (c*(brickWidth+brickPadding))+brickOffsetLeft;
@@ -101,6 +104,10 @@ function endGame(){
   brickY = (r*(brickHeight+brickPadding))+brickOffsetTop;
 
   score = 0;
+
+  bricks = [];
+  createBricks();
+
 }
 
 function drawBall() {

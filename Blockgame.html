@@ -67,6 +67,12 @@ function keyUpHandler(e) {
         leftPressed = false;
     }
 }
+function mouseMoveHandler(e) {
+    var relativeX = e.clientX - canvas.offsetLeft;
+    if(relativeX > 0 && relativeX < canvas.width) {
+        paddleX = relativeX - paddleWidth/2;
+    }
+}
 
 function drawBricks() {
     for(c=0; c<brickColumnCount; c++) {
@@ -185,7 +191,7 @@ function draw() {
     x += dx;
     y += dy;
 }
-
+document.addEventListener("mousemove", mouseMoveHandler, false);
 setInterval(draw, 10);
 </script>
 <body/>

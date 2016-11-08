@@ -83,6 +83,26 @@ function drawBricks() {
     }
 }
 
+function endGame(){
+  paddleX = (canvas.width-paddleWidth)/2;
+  x = canvas.width/2;
+  y = canvas.height-30;
+  dx = 2;
+  dy = -2;
+  brickRowCount = 3;
+  brickColumnCount = 5;
+  brickWidth = 75;
+  brickHeight = 20;
+  brickPadding = 10;
+  brickOffsetTop = 30;
+  brickOffsetLeft = 30;
+
+  brickX = (c*(brickWidth+brickPadding))+brickOffsetLeft;
+  brickY = (r*(brickHeight+brickPadding))+brickOffsetTop;
+
+  score = 0;
+}
+
 function drawBall() {
     ctx.beginPath();
     ctx.arc(x, y, 10, 0, Math.PI*2);
@@ -103,8 +123,8 @@ function collisionDetection() {
                     score++;
                     if(score == brickRowCount*brickColumnCount) {
                         //NOPE alert("YOU WIN, CONGRATULATIONS!");
-                        score == "Win"
-                        document.location.reload();
+                        endGame();
+
                     }
                 }
             }
@@ -142,27 +162,8 @@ function draw() {
             dy = -dy;
         }
         else {
-
-        //We Dont Like Alerts Here,
-
-            paddleX = (canvas.width-paddleWidth)/2;
-            x = canvas.width/2;
-            y = canvas.height-30;
-            dx = 2;
-            dy = -2;
-            brickRowCount = 3;
-            brickColumnCount = 5;
-            brickWidth = 75;
-            brickHeight = 20;
-            brickPadding = 10;
-            brickOffsetTop = 30;
-            brickOffsetLeft = 30;
-
-            brickX = (c*(brickWidth+brickPadding))+brickOffsetLeft;
-            brickY = (r*(brickHeight+brickPadding))+brickOffsetTop;
-
-            score = 0;
-
+              //We Dont Like Alerts Here,
+              endGame();
         }
     }
 

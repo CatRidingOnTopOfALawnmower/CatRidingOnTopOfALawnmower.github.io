@@ -3,6 +3,9 @@
 <body>
 <canvas id="myCanvas" width="480" height="320"></canvas>
 
+<script>
+
+</script>
 
 <script>
 var canvas = document.getElementById("myCanvas");
@@ -75,12 +78,11 @@ function draw() {
     } else if(y + dy > canvas.height-ballRadius) {
         if(x > paddleX && x < paddleX + paddleWidth) {
             dy = -dy;
-
         }
         else {
 
         //We Dont Like Alerts Here,
-            document.location.reload();
+            location.reload();
         }
     }
 

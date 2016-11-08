@@ -137,6 +137,16 @@ function draw() {
             y = canvas.height-30;
             dx = 2;
             dy = -2;
+            brickRowCount = 3;
+            brickColumnCount = 5;
+            brickWidth = 75;
+            brickHeight = 20;
+            brickPadding = 10;
+            brickOffsetTop = 30;
+            brickOffsetLeft = 30;
+            brickX = (c*(brickWidth+brickPadding))+brickOffsetLeft;
+            brickY = (r*(brickHeight+brickPadding))+brickOffsetTop;
+
         }
     }
 

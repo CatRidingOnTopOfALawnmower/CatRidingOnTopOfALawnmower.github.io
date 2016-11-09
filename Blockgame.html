@@ -6,6 +6,7 @@
 <button onclick="">start</button>
 
 
+
 <script>
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
@@ -32,7 +33,7 @@ var brickOffsetLeft = 30;
 
 var score = 0;
 
-var start
+var start = 0;
 
 var bricks = [];
 createBricks();
@@ -182,15 +183,16 @@ function draw() {
         }
     }
 
-    if(rightPressed && paddleX < canvas.width-paddleWidth) {
+    if(rightPressed && paddleX < canvas.width-paddleWidth&&start=1) {
         paddleX += 7;
     }
-    else if(leftPressed && paddleX > 0) {
+    else if(leftPressed && paddleX > 0&&start=1) {
         paddleX -= 7;
     }
-
+if(&&start=1){
     x += dx;
     y += dy;
+  }
 }
 document.addEventListener("mousemove", mouseMoveHandler, false);
 setInterval(draw, 10);

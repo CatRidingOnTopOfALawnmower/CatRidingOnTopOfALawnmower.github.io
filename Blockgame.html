@@ -52,6 +52,7 @@ var brickY = (r*(brickHeight+brickPadding))+brickOffsetTop;
 
 document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
+canvas.addEventListener("mousemove", mouseMoveHandler, false);
 
 
 
@@ -73,9 +74,7 @@ function keyUpHandler(e) {
     }
 }
 
-canvas.addEventListener('mousemove',function(evt) {
-    mouseMoveHandler();
-}, false);
+
 
 function mouseMoveHandler(e) {
     var relativeX = e.clientX - canvas.offsetLeft;
@@ -205,7 +204,6 @@ function draw() {
 
 
 
-document.addEventListener("mousemove", mouseMoveHandler, false);
 setInterval(draw, 10);
 </script>
 <body/>

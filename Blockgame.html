@@ -206,7 +206,9 @@ function draw() {
     y += dy;
 }
 
-if(start=0)
+if(start=0){
+  dontStart();
+}
 
 
 document.addEventListener("mousemove", mouseMoveHandler, false);

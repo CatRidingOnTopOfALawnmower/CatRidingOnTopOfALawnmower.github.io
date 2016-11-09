@@ -183,6 +183,7 @@ function draw() {
         }
     }
 
+  if (start=1){
     if(rightPressed && paddleX < canvas.width-paddleWidth) {
         paddleX += 7;
     }
@@ -192,7 +193,7 @@ function draw() {
 
     x += dx;
     y += dy;
-
+  }
 }
 
 document.addEventListener("mousemove", mouseMoveHandler, false);

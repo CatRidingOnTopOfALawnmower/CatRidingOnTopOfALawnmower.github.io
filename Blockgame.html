@@ -33,7 +33,6 @@ var brickOffsetLeft = 30;
 
 var score = 0;
 
-var start = 0;
 
 var bricks = [];
 createBricks();
@@ -49,11 +48,6 @@ function createBricks(){
 var brickX = (c*(brickWidth+brickPadding))+brickOffsetLeft;
 var brickY = (r*(brickHeight+brickPadding))+brickOffsetTop;
 
-function dontStart(){
-paddleX = (canvas.width-paddleWidth)/2;
-x = canvas.width/2;
-y = canvas.height-30;
-}
 
 
 
@@ -205,13 +199,10 @@ function draw() {
     y += dy;
 }
 
-if(start=0){
-  dontStart();
-}
 
 
 document.addEventListener("mousemove", mouseMoveHandler, false);
-setInterval(draw, 10);
+setInterval(draw, 0);
 </script>
 <body/>
 </html>

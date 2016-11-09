@@ -49,8 +49,19 @@ function createBricks(){
 var brickX = (c*(brickWidth+brickPadding))+brickOffsetLeft;
 var brickY = (r*(brickHeight+brickPadding))+brickOffsetTop;
 
+function dontStart(){
+paddleX = (canvas.width-paddleWidth)/2;
+x = canvas.width/2;
+y = canvas.height-30;
+
+};
+
+
+
 document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
+
+
 
 
 function keyDownHandler(e) {
@@ -184,16 +195,19 @@ function draw() {
     }
 
 
-    if(rightPressed && paddleX < canvas.width-paddleWidth && start = 1) {
+    if(rightPressed && paddleX < canvas.width-paddleWidth) {
         paddleX += 7;
     }
-    else if(leftPressed && paddleX > 0 && start = 1) {
+    else if(leftPressed && paddleX > 0) {
         paddleX -= 7;
     }
 
     x += dx;
     y += dy;
 }
+
+if(start=0)
+
 
 document.addEventListener("mousemove", mouseMoveHandler, false);
 setInterval(draw, 10);

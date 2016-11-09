@@ -73,11 +73,13 @@ function keyUpHandler(e) {
     }
 }
 
-
+canvas.addEventListener('mousemove',function(evt) {
+    mouseMoveHandler();
+}, false);
 
 function mouseMoveHandler(e) {
     var relativeX = e.clientX - canvas.offsetLeft;
-    if(relativeX > 0 && relativeX < canvas.width && e.clientY>0 && e.clientX>canvas.height) {
+    if(relativeX > 0 && relativeX < canvas.width) {
         paddleX = relativeX - paddleWidth/2;
     }
 }

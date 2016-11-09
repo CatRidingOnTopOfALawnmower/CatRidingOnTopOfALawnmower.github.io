@@ -48,7 +48,6 @@ function createBricks(){
 var brickX = (c*(brickWidth+brickPadding))+brickOffsetLeft;
 var brickY = (r*(brickHeight+brickPadding))+brickOffsetTop;
 
-while(e.clientY>0 && e.clientY<canvas.height);
 
 
 document.addEventListener("keydown", keyDownHandler, false);
@@ -73,9 +72,12 @@ function keyUpHandler(e) {
         leftPressed = false;
     }
 }
+
+
+
 function mouseMoveHandler(e) {
     var relativeX = e.clientX - canvas.offsetLeft;
-    if(relativeX > 0 && relativeX < canvas.width) {
+    if(relativeX > 0 && relativeX < canvas.width && e.clientY>0 && e.clientX>canvas.height) {
         paddleX = relativeX - paddleWidth/2;
     }
 }

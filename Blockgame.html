@@ -50,17 +50,21 @@ function createBricks(){
 var brickX = (c*(brickWidth+brickPadding))+brickOffsetLeft;
 var brickY = (r*(brickHeight+brickPadding))+brickOffsetTop;
 
-function start(){
-  if(alreadyStarted == 0 ){
-  console.log("Start");
-  dx = 2;
-  dy = -2;
-  alreadyStarted == 1;
-}else{
-  console.log("Dont Start");
-}
+
+function buttonPress(){
+    if (alreadyStarted == 0){
+      start(); }else{}
 
 }
+
+  function start(){
+    console.log("Start");
+    dx = 2;
+    dy = -2;
+    alreadyStarted = 1;
+}
+
+
 
 document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);

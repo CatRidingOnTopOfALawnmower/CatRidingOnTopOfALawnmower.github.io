@@ -33,6 +33,8 @@ var brickOffsetLeft = 30;
 
 var score = 0;
 
+var alreadyStarted = 0;
+
 
 var bricks = [];
 createBricks();
@@ -49,9 +51,14 @@ var brickX = (c*(brickWidth+brickPadding))+brickOffsetLeft;
 var brickY = (r*(brickHeight+brickPadding))+brickOffsetTop;
 
 function start(){
+  if(alreadyStarted = 0 ){
   console.log("Start");
   dx = 2;
   dy = -2;
+  alreadyStarted = 1;
+}else{
+  console.log("Dont Start");
+}
 
 }
 
@@ -107,6 +114,7 @@ function drawBricks() {
 }
 
 function endGame(){
+  alreadyStarted = 0;
   paddleX = (canvas.width-paddleWidth)/2;
   x = canvas.width/2;
   y = canvas.height-30;

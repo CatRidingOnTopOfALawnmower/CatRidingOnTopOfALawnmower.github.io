@@ -49,7 +49,10 @@ var brickX = (c*(brickWidth+brickPadding))+brickOffsetLeft;
 var brickY = (r*(brickHeight+brickPadding))+brickOffsetTop;
 
 function start(){
-  console.log("Test");
+  console.log("Start");
+  dx = 2;
+  dy = -2;
+
 }
 
 document.addEventListener("keydown", keyDownHandler, false);
@@ -107,8 +110,8 @@ function endGame(){
   paddleX = (canvas.width-paddleWidth)/2;
   x = canvas.width/2;
   y = canvas.height-30;
-  dx = 2;
-  dy = -2;
+  dx = 0;
+  dy = 0;
   brickRowCount = 3;
   brickColumnCount = 5;
   brickWidth = 75;

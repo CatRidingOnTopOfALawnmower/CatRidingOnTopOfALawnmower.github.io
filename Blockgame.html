@@ -3,7 +3,7 @@
 <body>
 <canvas id="myCanvas" width="480" height="320"></canvas>
 
-<button onclick="start();">start</button>
+<button onclick="buttonPress();">start</button>
 
 
 
@@ -50,25 +50,6 @@ function createBricks(){
 var brickX = (c*(brickWidth+brickPadding))+brickOffsetLeft;
 var brickY = (r*(brickHeight+brickPadding))+brickOffsetTop;
 
-
-function buttonPress(){
-    if (alreadyStarted == 0)
-    {
-      alreadyStarted = 1
-      start();
-    }
-    else
-    {
-      console.log("Dont Start")
-    }
-
-}
-
-  function start(){
-    console.log("Start");
-    dx = 2;
-    dy = -2;
-}
 
 
 
@@ -226,8 +207,30 @@ function draw() {
 }
 
 
+function buttonPress(){
+    if (alreadyStarted == 0)
+    {
+      start();
+    }
+    else
+    {
+      console.log("Dont Start")
+    }
+}
+
+  function start(){
+    alreadyStarted = 1;
+    console.log("Start");
+    dx = 2;
+    dy = -2;
+  }
+
+
 
 setInterval(draw, 10);
+
+draw();
+
 </script>
 <body/>
 </html>

@@ -61,7 +61,7 @@ canvas.addEventListener("mousemove", mouseMoveHandler, false);
 
 
 function keyDownHandler(e) {
-  while(alreadyStarted == 1){
+  for(alreadyStarted == 1){
     if(e.keyCode == 39) {
         rightPressed = true;
     }
@@ -71,7 +71,7 @@ function keyDownHandler(e) {
     }
 }
 function keyUpHandler(e) {
-  while(alreadyStarted == 1){
+  for(alreadyStarted == 1){
     if(e.keyCode == 39) {
         rightPressed = false;
     }

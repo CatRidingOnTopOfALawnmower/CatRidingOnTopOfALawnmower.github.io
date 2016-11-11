@@ -23,18 +23,7 @@ var alreadyStarted = 0;
 
 
 
-function buttonPress(){
-    if (alreadyStarted == 0){
-      start(); }else{console.log("Dont Start")}
 
-}
-
-  function start(){
-    console.log("Start");
-    dx = 2;
-    dy = -2;
-    alreadyStarted = 1;
-}
 
 
 
@@ -85,12 +74,11 @@ function draw() {
     if(x + dx > canvas.width-ballRadius || x + dx < ballRadius) {
         dx = -dx;
     }
-    if(y + dy < ballRadius) {
+    if(y + dy > canvas.height-ballRadius || y + dy < ballRadius) {
         dy = -dy;
-    } else if(y + dy > canvas.height-ballRadius) {
-        if(x > paddleX && x < paddleX + paddleWidth) {
-            dy = -dy;
-        }
+    }
+    
+
         else {
               //We Dont Like Alerts Here,
               console.log("Endgame");

@@ -52,8 +52,15 @@ var brickY = (r*(brickHeight+brickPadding))+brickOffsetTop;
 
 
 function buttonPress(){
-    if (alreadyStarted == 0){
-      start(); }else{console.log("Dont Start")}
+    if (alreadyStarted == 0)
+    {
+      alreadyStarted = 1
+      start();
+    }
+    else
+    {
+      console.log("Dont Start")
+    }
 
 }
 
@@ -61,7 +68,6 @@ function buttonPress(){
     console.log("Start");
     dx = 2;
     dy = -2;
-    alreadyStarted = 1;
 }
 
 

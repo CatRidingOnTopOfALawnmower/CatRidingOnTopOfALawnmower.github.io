@@ -61,19 +61,23 @@ canvas.addEventListener("mousemove", mouseMoveHandler, false);
 
 
 function keyDownHandler(e) {
+  while(alreadyStarted == 1){
     if(e.keyCode == 39) {
         rightPressed = true;
     }
     else if(e.keyCode == 37) {
         leftPressed = true;
+      }
     }
 }
 function keyUpHandler(e) {
+  while(alreadyStarted == 1){
     if(e.keyCode == 39) {
         rightPressed = false;
     }
     else if(e.keyCode == 37) {
         leftPressed = false;
+      }
     }
 }
 

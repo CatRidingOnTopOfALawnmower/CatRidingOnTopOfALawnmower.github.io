@@ -77,18 +77,6 @@ function draw() {
     if(y + dy > canvas.height-ballRadius || y + dy < ballRadius) {
         dy = -dy;
     }
-    
-
-        else {
-              //We Dont Like Alerts Here,
-              console.log("Endgame");
-              endGame();
-        }
-    }
-
-
-
-
     x += dx;
     y += dy;
 }

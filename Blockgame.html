@@ -132,6 +132,7 @@ function endGame(){
   bricks = [];
   createBricks();
 
+
 }
 
 
@@ -155,7 +156,8 @@ function collisionDetection() {
                     score++;
                     if(score == brickRowCount*brickColumnCount) {
                         //NOPE alert("YOU WIN, CONGRATULATIONS!");
-                        endGame();
+                        startedState = 3;
+                        document.getElementById("startButton").innerHTML = "Unpause";
 
                     }
                 }
@@ -225,7 +227,8 @@ function buttonPress(){
     }else if (startedState == 0)
     {
       start();
-    }
+    }else if (startedState == 3)
+      endGame();
 
 }
 

@@ -3,14 +3,14 @@
 <body>
 <canvas id="myCanvas" width="480" height="320"></canvas>
 
-<button onclick="buttonPress();">start</button>
+<button id="startButton" onclick="buttonPress();">start</button>
 
 
 
 <script>
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
-
+var name = document.getElementById("startButton");
 var x = canvas.width/2;
 var y = canvas.height-30;
 var dx = 0;
@@ -212,10 +212,12 @@ function draw() {
 function buttonPress(){
     if (startedState == 0)
     {
+      document.getElementById("startButton").innerHTML = "Start";
       start();
     }
     else
     {
+      document.getElementById("startButton").innerHTML = "Pause";
       stop();
     }
 }
@@ -232,6 +234,8 @@ function buttonPress(){
     dx = 0;
     dy = 0;
   }
+
+
 
 
 

@@ -127,6 +127,8 @@ function endGame(){
 
   score = 0;
 
+  startedState = 0;
+
   bricks = [];
   createBricks();
 
@@ -218,7 +220,7 @@ function buttonPress(){
     }
     if (startedState == 1)
     {
-      stop();
+      pause();
       document.getElementById("startButton").innerHTML = "Start";
     }
     if (startedState == 2)
@@ -226,8 +228,6 @@ function buttonPress(){
       unpause();
       document.getElementById("startButton").innerHTML = "Pause";
     }
-
-
 }
 
   function start(){
@@ -236,14 +236,13 @@ function buttonPress(){
     dx = 2;
     dy = -2;
   }
-  function stop(){
+  function pause(){
     startedState = 2;
     console.log("Pause");
     stopdx = dx;
     stopdy = dy;
     dx = 0;
     dy = 0;
-
 
   }
   function unpause(){

@@ -214,15 +214,15 @@ function draw() {
 
 
 function buttonPress(){
-    if (startedState == 1)
-    {
-      pause();
-      document.getElementById("startButton").innerHTML = "Start";
-    }
     if (startedState == 2)
     {
       unpause();
       document.getElementById("startButton").innerHTML = "Pause";
+    }
+    if (startedState == 1)
+    {
+      pause();
+      document.getElementById("startButton").innerHTML = "Start";
     }
     if (startedState == 0)
     {

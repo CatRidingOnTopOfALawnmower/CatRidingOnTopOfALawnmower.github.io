@@ -214,20 +214,21 @@ function draw() {
 
 
 function buttonPress(){
-    if (startedState == 0)
+    if (startedState == 2)
     {
-      start();
+      unpause();
+      document.getElementById("startButton").innerHTML = "Pause";
     }
     if (startedState == 1)
     {
       pause();
       document.getElementById("startButton").innerHTML = "Start";
     }
-    if (startedState == 2)
+    if (startedState == 0)
     {
-      unpause();
-      document.getElementById("startButton").innerHTML = "Pause";
+      start();
     }
+
 }
 
   function start(){
@@ -235,7 +236,7 @@ function buttonPress(){
     console.log("Start");
     dx = 2;
     dy = -2;
-    startedState = 3;
+
   }
   function pause(){
     startedState = 2;

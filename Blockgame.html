@@ -7,7 +7,7 @@
 .button {
     background-color: #4CAF50; /* Green */
     border: none;
-    color: white;
+    color: blue;
     padding: 8px 16px;
     text-align: center;
     text-decoration: none;
@@ -151,6 +151,7 @@ function endGame(){
   brickOffsetTop = 30;
   brickOffsetLeft = 30;
 
+
   brickX = (c*(brickWidth+brickPadding))+brickOffsetLeft;
   brickY = (r*(brickHeight+brickPadding))+brickOffsetTop;
 
@@ -160,6 +161,8 @@ function endGame(){
 
   bricks = [];
   createBricks();
+
+  document.getElementById("startButton").innerHTML = "Start";
 
 }
 
@@ -255,6 +258,7 @@ function buttonPress(){
     }else if (startedState == 0)
     {
       start();
+      document.getElementById("startButton").innerHTML = "Pause";
     }
 
 }

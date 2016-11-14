@@ -35,6 +35,8 @@ var score = 0;
 
 var startedState = 0;
 
+var stopdx = null;
+var stopdy = null;
 
 var bricks = [];
 createBricks();
@@ -213,13 +215,19 @@ function buttonPress(){
     if (startedState == 0)
     {
       start();
-      document.getElementById("startButton").innerHTML = "Pause";
     }
-    else
+    if (startedState == 1)
     {
       stop();
       document.getElementById("startButton").innerHTML = "Start";
     }
+    if (startedState == 2)
+    {
+      unpause();
+      document.getElementById("startButton").innerHTML = "Pause";
+    }
+
+
 }
 
   function start(){
@@ -229,12 +237,21 @@ function buttonPress(){
     dy = -2;
   }
   function stop(){
-    startedState = 0;
-    console.log("Pause")
-    if
+    startedState = 2;
+    console.log("Pause");
     dx = 0;
     dy = 0;
+    stopdx = dx;
+    stopdy = dy;
+
   }
+  function unpause(){
+    startedState = 1;
+    console.log("Unpause");
+    dx = stopdx;
+    dy = stopdy;
+  }
+
 
 
 

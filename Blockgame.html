@@ -218,13 +218,11 @@ function buttonPress(){
     {
       unpause();
       document.getElementById("startButton").innerHTML = "Pause";
-    }
-    if (startedState == 1)
+    }else if(startedState == 1)
     {
       pause();
       document.getElementById("startButton").innerHTML = "Start";
-    }
-    if (startedState == 0)
+    }else if (startedState == 0)
     {
       start();
     }

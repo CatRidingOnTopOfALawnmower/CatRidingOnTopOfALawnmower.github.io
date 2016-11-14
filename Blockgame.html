@@ -201,10 +201,10 @@ function draw() {
     }
 
 
-    if(rightPressed && paddleX < canvas.width-paddleWidth) {
+    if(rightPressed && paddleX < canvas.width-paddleWidth && startedState == 1) {
         paddleX += 7;
     }
-    else if(leftPressed && paddleX > 0) {
+    else if(leftPressed && paddleX > 0 && startedState == 1) {
         paddleX -= 7;
     }
 

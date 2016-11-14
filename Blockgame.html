@@ -33,7 +33,7 @@ var brickOffsetLeft = 30;
 
 var score = 0;
 
-var alreadyStarted = 0;
+var startedState = 0;
 
 
 var bricks = [];
@@ -106,7 +106,7 @@ function drawBricks() {
 }
 
 function endGame(){
-  alreadyStarted = 0;
+  startedState = 0;
   paddleX = (canvas.width-paddleWidth)/2;
   x = canvas.width/2;
   y = canvas.height-30;
@@ -129,6 +129,7 @@ function endGame(){
   createBricks();
 
 }
+
 
 function drawBall() {
     ctx.beginPath();
@@ -209,21 +210,27 @@ function draw() {
 
 
 function buttonPress(){
-    if (alreadyStarted == 0)
+    if (startedState == 0)
     {
       start();
     }
     else
     {
-      console.log("Dont Start")
+      stop();
     }
 }
 
   function start(){
-    alreadyStarted = 1;
+    startedState = 1;
     console.log("Start");
     dx = 2;
     dy = -2;
+  }
+  function stop(){
+    startedState = 0;
+    console.log("Pause")
+    dx = 0;
+    dy = 0;
   }
 
 

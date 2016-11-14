@@ -39,10 +39,6 @@ var stopdx = null;
 var stopdy = null;
 
 var bricks = [];
-
-var buttonTextState = "Start";
-
-
 createBricks();
 function createBricks(){
   for(c=0; c<brickColumnCount; c++) {
@@ -180,11 +176,7 @@ function drawScore() {
     ctx.fillStyle = "#0095DD";
     ctx.fillText("Score: "+score, 8, 20);
 }
-function drawButtonText() {
-    ctx.font = "16px Arial";
-    ctx.fillStyle = "#0095DD";
-    ctx.fillText(buttonTextState, 8, 20);
-}
+
 
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -226,13 +218,11 @@ function buttonPress(){
     if (startedState == 2)
     {
       unpause();
-      buttonTextState = "Pause";
-      //document.getElementById("startButton").innerHTML = "Pause";
+      document.getElementById("startButton").innerHTML = "Pause";
     }else if(startedState == 1)
     {
       pause();
-      buttonTextState = "Unpause";
-      //document.getElementById("startButton").innerHTML = "Unpause";
+      document.getElementById("startButton").innerHTML = "Unpause";
     }else if (startedState == 0)
     {
       start();

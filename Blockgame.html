@@ -1,6 +1,20 @@
 <html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <style>canvas { background: #eee; display: block; margin: 0 auto; }</style>
 <body>
+
+<div ng-app="">
+<p>Name: <input type="text" placeholder="Doge" ng-model="name"></p>
+
+<style>
+.Name {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #3498db;
+}
+</style>
+
+<h1 class= "Name"  ng-bind="name"></h1>
+
 <canvas id="myCanvas" width="480" height="320"></canvas>
 
 <style>

@@ -4,7 +4,7 @@
 <body>
 
 <div ng-app="">
-<!--<p>Name: <input type="text" placeholder="Doge" ng-model="name"></p>-->
+<p>Name:</p> <input id="scoreName" placeholder="Name"/>
 
 <style>
 .Name {
@@ -14,6 +14,7 @@
 </style>
 
 <!--<h1 class= "Name"  ng-bind="name"></h1>-->
+
 
 <canvas id="myCanvas" width="480" height="320"></canvas>
 
@@ -75,14 +76,21 @@ var brickPadding = 10;
 var brickOffsetTop = 30;
 var brickOffsetLeft = 30;
 
-var score = 0;
 
 var startedState = 0;
 
 var stopdx = null;
 var stopdy = null;
 
+
+var score = 0;
+var scoreName = document.getElementById("scoreName").innerHTML;
+var placeShift = 0;
+var scoreBoard = ["Test"];
+
+
 var bricks = [];
+
 createBricks();
 function createBricks(){
   for(c=0; c<brickColumnCount; c++) {
@@ -169,13 +177,19 @@ function endGame(){
 
   score = 0;
 
+  scoreName = document.getElementById("scoreName").innerHTML;
   startedState = 0;
 
+  scoreBoard [placeShift] = scoreName+score+"pts";
+  placeShift += 1;
+
   bricks = [];
+
   createBricks();
 
-  document.getElementById("startButton").innerHTML = "Start";
 
+  console.log(scoreName);
+  //console.log(scoreBoard);
 }
 
 
@@ -219,6 +233,7 @@ function drawScore() {
     ctx.font = "16px Arial";
     ctx.fillStyle = "#0095DD";
     ctx.fillText("Score: "+score, 8, 20);
+
 }
 
 

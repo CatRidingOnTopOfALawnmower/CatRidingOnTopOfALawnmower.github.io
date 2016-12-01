@@ -1,22 +1,19 @@
 <html>
-<body background="bgimage.jpg">
-<style>
-<canvas id="myCanvas" width="document.width" height="document.height"></canvas>
-</style>
+
 <style>
 .Title {
     font-family: Arial, Helvetica, sans-serif;
-    color: #3498db;
+    color: #0095DD;
     text-decoration: none;
 }
 .Link {
     font-family: Arial, Helvetica, sans-serif;
-    color: #3498db;
+    color: #0095DD;
     text-decoration: none;
-    border: 1px solid #3498db ;
+    border: 1px solid #0095DD ;
 }
 .button {
-    background-color: #4CAF50; /* Green */
+    background-color: #0095DD; /* Green */
     border: none;
     color: blue;
     padding: 8px 16px;
@@ -30,7 +27,26 @@
     cursor: pointer;
     outline: none;
 }
+body{
+  margin:0;
+  padding:0;
+}
+canvas{
+  position:absolute;
+  left:0;
+  top:0;
+  z-index:-1;
+}
+div{
+  position:absolute;
+  z-index:0;
+  left:12px;
+  top:10px;
+}
 </style>
+<canvas id="myCanvas" width="1440" height="750" style="border:1px solid #c3c3c3;">
+      Your browser does not support the canvas element.
+    </canvas>
 <header><h1 class= "Title" style="text-align:center;">Cat Riding On Top Of A Lawnmower</h1></header>
 
 <p style="text-align:center;"><img src="https://s-media-cache-ak0.pinimg.com/564x/b9/19/3e/b9193eabaf5dbfb1179f7526a7fd4dce.jpg"style="border:5px solid #008CBA"/><p/>
@@ -39,10 +55,22 @@
 <p style="text-align:center;">
 <a class= "Link" href="project1.html">Rasberry Pi Project</a>
 <a class= "Link" href="Blockgame.html">Block Game</a>
+<a class= "Link" href="Drawing.html">Drawing</a>
 </p>
 
 <script>
+var canvas = document.getElementById("myCanvas");
+var ctx = canvas.getContext("2d");
 
+
+function draw(){
+
+}
+
+
+setInterval(draw, 10);
+
+draw();
 </script>
 
 <!--

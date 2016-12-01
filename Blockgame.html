@@ -62,6 +62,9 @@ var dx = 0;
 var dy = 0;
 var ballRadius = 10;
 
+var dxVariable = 2;
+var dyVariable = -2;
+
 var paddleHeight = 10;
 var paddleWidth = 75;
 var paddleX = (canvas.width-paddleWidth)/2;
@@ -78,6 +81,8 @@ var brickOffsetLeft = 30;
 
 
 var startedState = 0;
+
+var level = 1;
 
 var stopdx = null;
 var stopdy = null;
@@ -155,14 +160,20 @@ function drawBricks() {
         }
     }
 }
-
-function endGame(){
+function standardVariables(){
   startedState = 0;
   paddleX = (canvas.width-paddleWidth)/2;
   x = canvas.width/2;
   y = canvas.height-30;
   dx = 0;
   dy = 0;
+
+  canvas.width=480;
+  canvas.height=320;
+
+  dxVariable = 2;
+  dyVariable = -2;
+
   brickRowCount = 3;
   brickColumnCount = 5;
   brickWidth = 75;
@@ -187,11 +198,36 @@ function endGame(){
 
   createBricks();
 
-
-  console.log(scoreName);
-  //console.log(scoreBoard);
+  level = 1;
 }
 
+function endGame(){
+  standardVariables();
+  console.log("Endgame");
+}
+
+function levelTwo(){
+  standardVariables();
+  dxVariable = 3;
+  dyVariable = -3;
+  level = 2;
+  console.log("LevelTwo");
+  document.getElementById("startButton").innerHTML = "Start";
+}
+function levelThree(){
+  standardVariables();
+  dxVariable = 3;
+  dyVariable = -3;
+  brickRowCount = 5;
+  brickColumnCount = 10;
+  drawBall();
+  createBricks();
+  canvas.width= 1000;
+  canvas.height= 500;
+  level = 3;
+  console.log("LevelThree");
+  document.getElementById("startButton").innerHTML = "Start";
+}
 
 function drawBall() {
     ctx.beginPath();
@@ -200,7 +236,6 @@ function drawBall() {
     ctx.fillStyle = "#0095DD";
     ctx.fill();
     ctx.closePath();
-    drawBricks();
 }
 function collisionDetection() {
     for(c=0; c<brickColumnCount; c++) {
@@ -213,14 +248,21 @@ function collisionDetection() {
                     score++;
                     if(score == brickRowCount*brickColumnCount) {
                         //NOPE alert("YOU WIN, CONGRATULATIONS!");
-                        endGame();
 
+                          if (level==1){
+                            levelTwo();
+                          }else if(level==2){
+                            levelThree();
+                          }else if(level==3){
+                            endGame();
+                          }
+                        }
                     }
                 }
             }
         }
     }
-}
+
 
 function drawPaddle() {
     ctx.beginPath();
@@ -233,7 +275,11 @@ function drawScore() {
     ctx.font = "16px Arial";
     ctx.fillStyle = "#0095DD";
     ctx.fillText("Score: "+score, 8, 20);
-
+  }
+function drawLevel() {
+    ctx.font = "16px Arial";
+    ctx.fillStyle = "#0095DD";
+    ctx.fillText("Level: "+level, canvas.width-100, 20);
 }
 
 
@@ -243,6 +289,8 @@ function draw() {
     drawPaddle();
     collisionDetection();
     drawScore();
+    drawLevel();
+    drawBricks();
 
     if(x + dx > canvas.width-ballRadius || x + dx < ballRadius) {
         dx = -dx;
@@ -255,7 +303,6 @@ function draw() {
         }
         else {
               //We Dont Like Alerts Here,
-              console.log("Endgame");
               endGame();
         }
     }
@@ -293,8 +340,8 @@ function buttonPress(){
   function start(){
     startedState = 1;
     console.log("Start");
-    dx = 2;
-    dy = -2;
+    dx = dxVariable;
+    dy = dyVariable;
 
   }
   function pause(){

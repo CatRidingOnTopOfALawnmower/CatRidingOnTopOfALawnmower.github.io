@@ -5,19 +5,26 @@
     font-family: Arial, Helvetica, sans-serif;
     color: #0095DD;
     text-decoration: none;
+    z-index: -1;
 }
 .Link {
     font-family: Arial, Helvetica, sans-serif;
     color: #0095DD;
     text-decoration: none;
     border: 1px solid #0095DD ;
+    z-index: 3;
+    text-align: center;
+
+
+
 }
-.Linkg:hover {
+.Link:hover {
     font-family: Arial, Helvetica, sans-serif;
     color: white;
     text-decoration: none;
     border: 1px solid #0095DD ;
     background-color: #0095DD;
+    z-index: 1;
 
 }
 .button {
@@ -38,12 +45,13 @@
 body{
   margin:0;
   padding:0;
+  z-index: 1;
 }
 canvas{
   position:absolute;
   left:0;
   top:0;
-  z-index:1;
+  z-index:0;
 }
 div{
   position:absolute;
@@ -52,6 +60,8 @@ div{
   top:10px;
 }
 </style>
+
+
 <canvas id="myCanvas" width="1440" height="750" style="border:1px solid #c3c3c3;">
       Your browser does not support the canvas element.
     </canvas>
@@ -60,10 +70,9 @@ div{
 <p style="text-align:center;"><img src="https://s-media-cache-ak0.pinimg.com/564x/b9/19/3e/b9193eabaf5dbfb1179f7526a7fd4dce.jpg"style="border:5px solid #0095DD"/><p/>
 
 
-<p style="text-align:center;">
+<p style= "text-align: center;  position:absolute;     left: 650px; bottom: 100;">
 <a class= "Link" href="Blockgame.html">Pong Game</a>
 <a class= "Link" href="Drawing.html">Sketching</a>
-
 </p>
 
 <script>
@@ -105,7 +114,5 @@ function draw() {
 setInterval(draw, 10);
 </script>
 
-<!--
-<p style="text-align:center;"<a href="http://thecatapi.com"><img src="http://thecatapi.com/api/images/get?format=src&type=gif"></a></p>-->
 <body/>
 </html>
